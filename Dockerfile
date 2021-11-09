@@ -1,7 +1,5 @@
 FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html
-RUN yarn
-RUN yarn build
 COPY ./build /usr/share/nginx/html
 COPY ./.nginx/nginx.conf /etc/nginx/nginx.template
 RUN apk --no-cache add curl
