@@ -1,10 +1,10 @@
 # G13 Wall of Shame Frontend
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=g13-wall-of-shame-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=g13-wall-of-shame-frontend)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=g13-wall-of-shame-frontend&metric=bugs)](https://sonarcloud.io/dashboard?id=g13-wall-of-shame-frontend)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=g13-wall-of-shame-frontend&metric=code_smells)](https://sonarcloud.io/dashboard?id=g13-wall-of-shame-frontend)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=g13-wall-of-shame-frontend&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=g13-wall-of-shame-frontend)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=g13-wall-of-shame-frontend&metric=sqale_index)](https://sonarcloud.io/dashboard?id=g13-wall-of-shame-frontend)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=g13-wall-of-shame-frontend&metric=coverage)](https://sonarcloud.io/dashboard?id=g13-wall-of-shame-frontend)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_g13-wall-of-shame-frontend&metric=alert_status)](https://sonarcloud.io/dashboard?id=jpmoura_g13-wall-of-shame-frontend)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_g13-wall-of-shame-frontend&metric=bugs)](https://sonarcloud.io/dashboard?id=jpmoura_g13-wall-of-shame-frontend)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_g13-wall-of-shame-frontend&metric=code_smells)](https://sonarcloud.io/dashboard?id=jpmoura_g13-wall-of-shame-frontend)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_g13-wall-of-shame-frontend&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=jpmoura_g13-wall-of-shame-frontend)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_g13-wall-of-shame-frontend&metric=sqale_index)](https://sonarcloud.io/dashboard?id=jpmoura_g13-wall-of-shame-frontend)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jpmoura_g13-wall-of-shame-frontend&metric=coverage)](https://sonarcloud.io/dashboard?id=jpmoura_g13-wall-of-shame-frontend)
 
 This project was created with the following purposes:
 
