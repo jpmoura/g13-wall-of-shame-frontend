@@ -20,7 +20,7 @@ export default function HomePage(): JSX.Element {
     setShouldOpenDialog(false);
   }
 
-  const listQuery = useQuery('shames', shameService.list);
+  const listQuery = useQuery('shames', async () => shameService.list());
 
   useEffect(() => {
     if (!shouldOpenDialog) {
