@@ -49,12 +49,12 @@ export default function AddShameDialog({ open, onClose }: AddShameDialogProps): 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Adicionar mais uma vergonha</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Para adicionar mais um rolê que o G13 deixou de ir, preencha os campos abaixo:
-          </DialogContentText>
-          <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
+          <DialogTitle id="form-dialog-title">Adicionar mais uma vergonha</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Para adicionar mais um rolê que o G13 deixou de ir, preencha os campos abaixo:
+            </DialogContentText>
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <TextField
@@ -82,7 +82,7 @@ export default function AddShameDialog({ open, onClose }: AddShameDialogProps): 
               </Grid>
               <Grid item xs={12}>
                 <DatePicker
-                  label="Popup de seleção de data"
+                  label="Data"
                   inputFormat="dd/MM/yyyy"
                   value={formik.values.date}
                   onChange={handleDateChange}
@@ -91,22 +91,22 @@ export default function AddShameDialog({ open, onClose }: AddShameDialogProps): 
                 />
               </Grid>
             </Grid>
-          </form>
-        </DialogContent>
-        <DialogActions>
-          <Grid container direction="row" justifyContent="space-around">
-            <Grid item>
-              <Button variant="contained" onClick={handleClose}>
-                Cancelar
-              </Button>
+          </DialogContent>
+          <DialogActions>
+            <Grid container direction="row" justifyContent="space-around">
+              <Grid item>
+                <Button variant="contained" onClick={handleClose}>
+                  Cancelar
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" type="submit" color="primary" disabled={formik.isSubmitting || Object.keys(formik.errors).length > 0}>
+                  {formik.isSubmitting ? <CircularProgress color="inherit" /> : 'Adicionar'}
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Button variant="contained" type="submit" color="primary" disabled={formik.isSubmitting}>
-                {formik.isSubmitting ? <CircularProgress color="inherit" /> : 'Adicionar'}
-              </Button>
-            </Grid>
-          </Grid>
-        </DialogActions>
+          </DialogActions>
+        </form>
       </Dialog>
     </LocalizationProvider>
   );

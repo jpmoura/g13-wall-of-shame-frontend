@@ -5,11 +5,17 @@ import ShameListItem from '../../molecules/shame-list-item';
 import { ShameListProps } from './types';
 
 export default function ShameList({ shames, isLoading }: ShameListProps): JSX.Element {
-  const shameListItems = shames.map((shame: Shame) => <ShameListItem item={shame} key={shame.id} />);
+  const buildListItems = () => {
+    if (isLoading) {
+      return [0, 1, 3].map((id: number) => <Skeleton key={id} height={50} />);
+    }
+
+    return shames.map((shame: Shame) => <ShameListItem item={shame} key={shame.id} />);
+  };
 
   return (
     <Paper>
-      {isLoading ? [0, 1, 3].map((id: number) => <Skeleton key={id} />) : shameListItems}
+      {buildListItems()}
     </Paper>
   );
 }
