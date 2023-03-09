@@ -37,7 +37,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn build
+        run: yarn
 
       - name: Build React SPA
         run: yarn build
