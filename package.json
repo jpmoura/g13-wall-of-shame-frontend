@@ -2,6 +2,7 @@
   "name": "g13-wall-of-shame-frontend",
   "description": "App to track all my friend's mistakes",
   "license": "MIT",
+  "homepage": "https://jpmoura.github.io/g13-wall-of-shame-frontend",
   "keywords": [
     "g13-wall-of-shame",
     "react",
