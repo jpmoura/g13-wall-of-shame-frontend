@@ -95,7 +95,7 @@ export default function AddShameDialog({ open, onClose }: AddShameDialogProps): 
           <DialogActions>
             <Grid container direction="row" justifyContent="space-around">
               <Grid item>
-                <Button variant="contained" onClick={handleClose}>
+                <Button variant="contained" color="secondary" onClick={handleClose}>
                   Cancelar
                 </Button>
               </Grid>
