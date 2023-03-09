@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -12,7 +13,6 @@ on:
       - "package.json"
       - "tsconfig.json"
       - "sonar-project.properties"
-      - ".nginx/**"
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
@@ -28,26 +28,17 @@ on:
       - ".nginx/**"
 
 jobs:
-  sonarcloud:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout repository on branch ${{ github.ref }}"
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-          fetch-depth: 0
+        uses: actions/checkout@v3
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache packages
-        uses: actions/cache@v2
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
 
       - name: Install packages
         run: yarn
@@ -55,6 +46,17 @@ jobs:
       - name: Run TypeScript compiler
         run: |
           npx tsc
+
+      - name: Build
+        run: |
+          yarn build
+
+  quality-gate:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository on branch ${{ github.ref }}"
+        uses: actions/checkout@v3
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
