@@ -4,7 +4,7 @@ import BaseService from './base-service';
 
 export default class ShameService extends BaseService {
   constructor() {
-    super('https://g13-wall-of-shame-api.herokuapp.com/');
+    super('http://mourajoao.ddns.net:9001/');
   }
 
   list(): Promise<Array<Shame>> {
